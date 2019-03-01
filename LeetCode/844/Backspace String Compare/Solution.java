@@ -12,14 +12,16 @@ public class Solution {
         while(true){
             if(i<0 || j<0)
                 break;
-            else if(T.charAt(j) == '#')
+            else if(T.charAt(j) == '#' && j-2 >= 0)
                 j = j - 2;
-            else if(S.charAt(i) == '#')
+            else if(S.charAt(i) == '#' && i-2 >= 0)
                 i = i - 2;
             else if(S.charAt(i) == T.charAt(j)){
                 i--;
                 j--;
             }
+            else
+                return false;
         }
     }
 }
