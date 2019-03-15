@@ -6,7 +6,7 @@ public class Solution {
 
     }
     public List<String> restoreIpAddresses(String s) {
-        BackTrace(0,s,);
+        BackTrace();
         return list;
     }
 }
