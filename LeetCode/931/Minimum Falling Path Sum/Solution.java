@@ -22,7 +22,7 @@ class Solution {
         }
         int rs = Integer.MAX_VALUE;
         for (int i = 0; i < A[0].length; i++) {
-            rs = Math.min(rs,A[A.length-1][i]);
+            rs = Math.min(rs,dp[A.length-1][i]);
         }
         return rs;
     }
