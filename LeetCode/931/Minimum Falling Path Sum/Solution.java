@@ -24,6 +24,7 @@ class Solution {
         for (int i = 0; i < A[0].length; i++) {
             rs = Math.min(rs,dp[A.length-1][i]);
         }
+        Float f = 1.0;
         return rs;
     }
 }
