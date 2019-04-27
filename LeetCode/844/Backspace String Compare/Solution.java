@@ -3,25 +3,35 @@
  */
 public class Solution {
     public boolean backspaceCompare(String S, String T) {
-        if(S.length()==0 && T.length()==0)
-            return true;
-        else if(S.length() == 0 || T.length() == 0)
-            return false;
-        int i = S.length()-1;
-        int j = T.length()-1;
-        while(true){
-            if(i<0 || j<0)
-                break;
-            else if(T.charAt(j) == '#' && j-2 >= 0)
-                j = j - 2;
-            else if(S.charAt(i) == '#' && i-2 >= 0)
-                i = i - 2;
-            else if(S.charAt(i) == T.charAt(j)){
-                i--;
-                j--;
+        Stack<Character> s = new Stack();
+        Stack<Character> t = new Stack();
+        for(int i = 0 ; i < S.length() ; i++){
+            if(S.charAt(i) == '#'){
+                if(!s.empty()){
+                    s.pop();
+                }
             }
-            else
+            else{
+                s.push(S.charAt(i));
+            }
+        }
+        for(int i = 0 ; i < T.length() ; i++){
+            if(T.charAt(i) == '#'){
+                if(!t.empty()){
+                    t.pop();
+                }
+            }
+            else{
+                t.push(T.charAt(i));
+            }
+        }
+        while(!s.empty() && !t.empty()){
+            if(s.pop() != t.pop())
                 return false;
         }
+        if(s.empty() && t.empty())
+            return true;
+        else
+            return false;
     }
 }
