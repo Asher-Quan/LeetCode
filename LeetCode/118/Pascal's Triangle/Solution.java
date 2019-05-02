@@ -5,8 +5,8 @@ public class Solution {
 	public List<List<Integer>> generate(int numRows) {
 		List<List<Integer>> list = new ArrayList<>();
         if(numRows == 0)
-        	return null;
-        int [][]nums = new int[numRows][];
+        	return list;
+        int [][]nums = new int[numRows][numRows];
         for(int i = 0 ; i< numRows ; i++) {
         	List<Integer> row = new ArrayList<>();
         	for(int j = 0 ; j < i+1 ; j++) {
